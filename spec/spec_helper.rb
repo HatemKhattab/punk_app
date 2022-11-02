@@ -12,6 +12,13 @@
 # the additional setup, and require it from the spec files that actually need
 # it.
 #
+require 'require_all'
+
+ENV["RAILS_ENV"] = 'test'
+require File.expand_path("../../config/environment", __FILE__)
+
+require_all 'app'
+
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
