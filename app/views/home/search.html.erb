@@ -8,8 +8,8 @@
     </tr>
     <%-@arr.each do |row|%>
       <tr>
-        <th><%= row["name"]%></th>
-        <th><%= row["abv"]%></th>
+        <th><%= link_to row["name"], home_path(row["id"])%></th>
+        <th><%= link_to row["abv"]%></th>
       </tr>
     <%-end%>
   </tabel>
