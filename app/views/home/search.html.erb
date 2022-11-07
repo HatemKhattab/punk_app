@@ -1,16 +1,20 @@
 
 <%-if @view.present?%>
-  <table>
-    <tr>
-      <th>Name</th>
-      <th>ABV</th>
-    </tr>
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th>Name</th>
+        <th>ABV</th>
+      </tr>
+    </thead>
+    <tbody class="table-striped">
     <%-@view.each do |row|%>
       <tr>
-        <th><%= link_to row["name"], home_path(row["id"]) %></th>
-        <th><%= row["abv"] %></th>
+        <td><%= link_to row["name"], home_path(row["id"]) %></th>
+        <td><%= row["abv"] %></th>
       </tr>
     <%-end%>
+    </tbody>
   </tabel>
   <%= will_paginate @view %>
 <%-end%>
