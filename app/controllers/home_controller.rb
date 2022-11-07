@@ -5,18 +5,18 @@ class HomeController < ApplicationController
       redirect_to root_path and return
     else
       response = ::ApiClients::PunkClient.new.search(params[:query])
-      if response.status != 200
+      if response.status != 200 || response.body.size==0
         @error_msg = "Searching didnt get any result, plz try another search term"
-        return
+        redirect_to root_path and return
       end
-      @arr = response.body
+      arr = response.body
+      @view=arr.paginate(page: params[:page], per_page: 10)
     end
   end
 
   def show
     response = ::ApiClients::PunkClient.new.get_beer(params[:id])
     @view = response.body.first
-    
   end
 
   def index

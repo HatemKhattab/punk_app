@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'faraday'
+gem 'will_paginate', '~> 3.3'
 
 gem 'require_all'
 group :development, :test do

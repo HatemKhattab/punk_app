@@ -1,3 +1,4 @@
+
 <%-if @arr.present? && @arr.size > 0%>
   <table>
     <tr>
@@ -11,4 +12,9 @@
       </tr>
     <%-end%>
   </tabel>
-<%-end%> 
+<%-end%>
+</br>
+<div>
+<%= will_paginate @arr %>
+</div>
+
