@@ -9,8 +9,11 @@ Bundler.require(*Rails.groups)
 module PunkApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 6.1
-
+    config.load_defaults 6.0
+    Dir[Rails.root.join("app/api_clients/**/*.rb")].each { |f| require f }
+    config.action_controller.permit_all_parameters = true
+    # config.autoloader = :classic
+    # config.autoload_paths += %W(#{config.root}/app/api_clients/)
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
