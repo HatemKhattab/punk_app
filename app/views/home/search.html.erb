@@ -1,20 +1,19 @@
 
-<%-if @arr.present? && @arr.size > 0%>
+<%-if @view.present?%>
   <table>
     <tr>
       <th>Name</th>
       <th>ABV</th>
     </tr>
-    <%-@arr.each do |row|%>
+    <%-@view.each do |row|%>
       <tr>
         <th><%= link_to row["name"], home_path(row["id"]) %></th>
         <th><%= row["abv"] %></th>
       </tr>
     <%-end%>
   </tabel>
+  <%= will_paginate @view %>
 <%-end%>
 </br>
-<div>
-<%= will_paginate @arr %>
-</div>
+
 

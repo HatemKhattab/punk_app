@@ -2,12 +2,12 @@ class HomeController < ApplicationController
 
   def search
     if params[:query].blank? 
-      redirect_to root_path and return
+      redirect_to root_path
     else
       response = ::ApiClients::PunkClient.new.search(params[:query])
       if response.status != 200 || response.body.size==0
         @error_msg = "Searching didnt get any result, plz try another search term"
-        redirect_to root_path and return
+        redirect_to root_path
       end
       arr = response.body
       @view=arr.paginate(page: params[:page], per_page: 10)
