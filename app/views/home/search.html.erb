@@ -1,0 +1,16 @@
+
+<h1>Hello</h1>
+<%-if @arr.present? && @arr.size > 0%>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>ABV</th>
+    </tr>
+    <%-@arr.each do |row|%>
+      <tr>
+        <th><%= row["name"]%></th>
+        <th><%= row["abv"]%></th>
+      </tr>
+    <%-end%>
+  </tabel>
+<%-end%> 

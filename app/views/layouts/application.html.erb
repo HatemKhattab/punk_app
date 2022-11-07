@@ -11,6 +11,11 @@
   </head>
 
   <body>
+    <h1>Welcome to PunkApp</h1>
+    <%= form_tag(search_path, :method => "get") do %>
+      <%=search_field_tag :query, params[:query]%>
+      <%= button_tag "Search ..", name: nil%>
+    <% end %>
     <%= yield %>
   </body>
 </html>
