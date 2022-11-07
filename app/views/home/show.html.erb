@@ -1,0 +1,12 @@
+<h3>Name</h3>
+<p><%=@view["name"]%></p>
+<h3>Description</h3>
+<p><%=@view["description"]%></p>
+<h3>Food pairing</h3>
+<ul>
+  <%@view["food_pairing"].each do |food| %>
+    <li><%= food%></li>
+  <%end%>
+</ul>
+
+<%= link_to 'Back', :back%>
