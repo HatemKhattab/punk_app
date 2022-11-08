@@ -9,8 +9,10 @@ bundle exec rspec
 ```
 
 # How to run the app locally
-* Git clone https://github.com/HatemKhattab/punk_app.git
-* cd punk_app
-* bundle install
-* rails s
+```
+git clone git@github.com:HatemKhattab/punk_app.git
+cd punk_app
+bundle install
+rails s
+```
 * Go to http://localhost:3000/
