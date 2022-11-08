@@ -1,25 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## About
+Web client for Punk Api, where you can search for beer and get more information about every result.
 
-Things you may want to cover:
+## How to run the test suite
+bundle exec rspec
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# punk_app
+# How to run the app locally
+* Git clone https://github.com/HatemKhattab/punk_app.git
+* cd punk_app
+* bundle install
+* rails s
+* Go to http://localhost:3000/
