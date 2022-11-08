@@ -31,10 +31,9 @@ describe ApiClients::PunkClient do
 
     context "non matching" do
       Given(:result){subject.get_beer(1548114)}
+
       Then{expect(result.status).to eq 404}
       And{expect(result.body["error"]).to eq "Not Found"}
-      
     end
-      
   end
 end
