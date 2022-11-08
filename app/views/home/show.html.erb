@@ -1,10 +1,13 @@
 <%-if @view["image_url"].present?%>
   <%= image_tag @view["image_url"], alt: 'icon', class: "card-img-top" %>
 <%end%>
+
 <h3>Name</h3>
 <p><%=@view["name"]%></p>
+
 <h3>Description</h3>
 <p><%=@view["description"]%></p>
+
 <h3>Food pairing</h3>
 <ul>
   <%@view["food_pairing"].each do |food| %>
