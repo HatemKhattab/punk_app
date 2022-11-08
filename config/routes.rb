@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  
   root "home#index"
+
+  resources :home, only: [:show, :index]
   get '/search', to: "home#search"
-  get '/index', to: "home#index"
-  resources :home, only: [:show]
 end
