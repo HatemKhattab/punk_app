@@ -12,12 +12,18 @@ describe ApiClients::PunkClient do
       And{expect(result.body.first["name"]).to eq "Trashy Blonde"}
     end
 
-    context "wit no matching result" do
+    context "with no matching result" do
       Given(:result){subject.search("jfdlkj")}
       
       Then{expect(result.status).to eq 200}
       And{expect(result.body.size).to eq 0}
     end
+    
+    context "when api fails" do
+      Given(:result){subject.search("")}
+
+      Then{expect(result.status).to eq 400}
+    end 
   end
 
   describe "#get_beer" do
