@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def search
-    redirect_to root_path  if params[:query].blank? 
+    redirect_to root_path and return  if params[:query].blank? 
     response = ::ApiClients::PunkClient.new.search(params[:query])
     if response.status != 200 || response.body.size == 0
       flash[:notice] = "Searching didnt get any result, plz try another search term"
